@@ -2,7 +2,8 @@ from django.shortcuts import render
 from .models import Post
 from django.views.generic import(
 
- listview)
+ listview
+ )
 
 
 # Create your views here.
