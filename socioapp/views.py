@@ -1,14 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Post
 from django.views.generic import(
 
- listview
+ ListView
  )
 
 
 # Create your views here.
 
 class PostListView(ListView):
-    template_name = "socioapp/post_list.html"
-    queryset = post.objects.all()
-    context.object_name ='posts'
+    template_name = "/home/elly/Core/Einstagram/socioapp/templates/post_list.html"
+    queryset = Post.objects.all()
+    context_object_name ='posts'
