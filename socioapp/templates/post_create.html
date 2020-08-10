@@ -1,0 +1,14 @@
+{% extends '/home/elly/Core/Einstagram/socioapp/templates/base.html' %} 
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+ 
+   <div class="panel panel-default" style ="width:500px; margin:0 auto;"></div>
+       <div class="panel-body">
+          {% cripsy form %}
+          {% csrf_token %}
+       
+       </div>
+
+{% endblock  %} 
