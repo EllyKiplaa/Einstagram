@@ -12,6 +12,7 @@ urlpatterns = [
     #local :
     url(r"^$", PostListView.as_view(), name='post_list'),
     url(r"^new/", PostCreateView.as_view(), name='post_create'),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
     
    
 ]

@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import PostForm
 from .models import Post
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone 
 from django.views.generic import(
     ListView,
@@ -31,3 +32,4 @@ class PostCreateView(CreateView):
 class PostDetailView(DetailView):
 
     queryset = Post.objects.all()
+
