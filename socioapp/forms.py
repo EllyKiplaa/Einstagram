@@ -5,7 +5,7 @@ from crispy_forms.layout import Submit, Layout, Field
 
 class PostForm(forms.ModelForm):
     helper = FormHelper()
-    helper.form_method = 'p'
+    helper.form_method = 'POST'
     helper.add_input(Submit("Post", "Post", css_class='btn-primary'))
 
     class Meta:
@@ -14,5 +14,5 @@ class PostForm(forms.ModelForm):
             'image',
             'caption'
         ] 
-        
+
 
