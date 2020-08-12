@@ -1,0 +1,96 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {%  block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
+     
+    {% bootstrap_css %}
+    
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    {% endblock %}
+    
+    <title class="fab fa-instagram">Instagram</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand navbar-light " style=""> 
+        <a class="fab fa-instagram" href="/" style = " display: flex;flex-direction: row;justify-content: flex-start;
+    width: 30%;"></a>
+        <div class="search" style="">
+            <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_user'%}">
+                <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search"
+                    name="search_user">
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </div>
+
+        <ul class="navbar-nav mr-auto nav-right-items">
+            <li class="nav-item">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-home nav-icons"><span class="sr-only">(current)</span></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">
+                    <i class="far fa-compass nav-icons"></i>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#">
+                    <i class="far fa-heart nav-icons"></i>
+                </a>
+            </li>
+            <li class="nav-item ">
+                {% comment %} <a class="nav-link" href="{%url 'profile'%}" >
+                      <span><img src="{{user.profile.profile_photo.url}}" alt=""
+                style="border-radius: 50%; width:50px; height:50px; border-color: brown; border-width: 1px;"></span>
+                </a> {% endcomment %}
+            </li>
+            <ul>
+            <li class="dropdown">
+                <a href="#" class="" data-toggle="dropdown"><h1 id="hello"><em><?php echo $login_user;?></em></h1>
+                <span><img src="{{user.profile.profile_photo.url}}" alt=""
+                style="border-radius: 50%; width:50px; height:50px; border-color: brown; border-width: 1px;"></span>
+                <b class="caret"></b></a>
+                <ul class="dropdown-menu" style = "">
+                <li><i class="fas fa-plus btn btn-outline-info btn-sm"></i><a href="{%url 'upload'%}">Post</a></li>
+                <li><i class="fas fa-user btn btn-outline-info btn-sm"></i><a href="{%url 'profile'%}">Profile</a></li>
+                <li><i class="far fa-user-edit btn btn-outline-info btn-sm"></i><a href="{%url 'edit'%}">Update Profile</a>
+                <div class="card-footer">
+                    <big class="text-muted" ><i class="fas fa-sign-out-alt "></i><a href="/logout">Logout</a></big>
+                    </div>
+                </li>
+                </ul>
+            </li>
+            </ul>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+    {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    {% endblock %}
+</body>
+
+</html>
