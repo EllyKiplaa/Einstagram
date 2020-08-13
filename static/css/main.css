@@ -79,7 +79,7 @@ header{
 
 .content_container{
     background-color: #FAFAFA;
-    padding-top: 100px;
+    padding-top: 10px;
     position: absolute;
     width: 100%;
     top:83px;
@@ -184,7 +184,7 @@ header{
     font-weight: 500;
     color:#111;
     margin: 0px 0px 8px;
-    margin-left: 500px;
+    margin-left: 500;
     padding: 0px 21px; 
 }
 
